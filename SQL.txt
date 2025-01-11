@@ -1,0 +1,1 @@
+SELECT `summa` FROM `C-tir` WHERE MINoylig <=(SELECT `oylig` FROM `A-tir` WHERE `Passpart seriya`='AA00000000') AND MAXoylig >=(SELECT `oylig` FROM `A-tir` WHERE `Passpart seriya`='AA00000000');
