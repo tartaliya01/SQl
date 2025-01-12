@@ -1,0 +1,23 @@
+235 2 2 
+1 SELECT  `toyifa` FROM `users` WHERE `ID`=(A)
+2 SELECT  `qora ro'yxat` FROM `%p` WHERE `toyifa`=(A)
+3 WHERE ID!=(SELECT  `qora ro'yxat` FROM `%p` WHERE `toyifa`=( SELECT  `toyifa` FROM `users` WHERE `ID`=(A)))
+4 SELECT `oylig`  FROM `users` WHERE `ID`=(A) 
+5 SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)
+6 ((SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)))/100
+7 SELECT `oylig`  FROM `users` WHERE `ID`=(A) +(((SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)))/100)
+8 UPDATE `users` SET `oylig`= (SELECT `oylig`  FROM `users` WHERE `ID`=(A) +(((SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)))/100))
+ WHERE 1
+9 UPDATE `users` SET `oylig`= (SELECT `oylig`  FROM `users` WHERE `ID`=(A) +(((SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)))/100))
+ WHERE 1
+10 UPDATE `users` SET `oylig`= (SELECT `oylig`  FROM `users` WHERE `ID`=(A) +(((SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (A)))/100))
+ WHERE WHERE ID!=(SELECT  `qora ro'yxat` FROM `%p` WHERE `toyifa`=( SELECT  `toyifa` FROM `users` WHERE `ID`=(A)))
+
+11 UPDATE `users` SET `oylig`= (SELECT `oylig`  FROM `users` WHERE `ID`=(1) +(((SELECT  `oylig`  FROM `users` WHERE `toyifa` = (1)) * (SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (SELECT  `toyifa` FROM `users` WHERE `ID`=(1))))/100))
+ WHERE  ID!=(SELECT  `qora ro'yxat` FROM `%p` WHERE `toyifa`=( SELECT  `toyifa` FROM `users` WHERE `ID`=(1)))
+
+12UPDATE `users` SET `oylig` = 
+((SELECT `oylig`  FROM `users` WHERE `ID`='1') +(((SELECT  `oylig`  FROM `users` WHERE `ID` = '1') * 
+(SELECT  `oylig%`  FROM `%p` WHERE `toyifa` = (SELECT  `toyifa` FROM `users` WHERE `ID` ='1'))) / 100)) 
+ WHERE `ID` = '1' AND 
+ `ID`!=(SELECT  `qora ro'yxat` FROM `%p` WHERE `toyifa` = ( SELECT  `toyifa` FROM `users` WHERE `ID` = '1' ))
