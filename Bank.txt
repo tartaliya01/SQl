@@ -1,0 +1,50 @@
+1 UPDATE `bank` SET `schet`= '[value-2]' WHERE 1
+2 SELECT `bank` FROM `bank raqam` WHERE `raqam`= (A)
+3 SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%"
+4 UPDATE `bank` SET `schet`= (A) WHERE  
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%")
+5 SELECT  `schet` FROM `bank` WHERE `bank`=  (SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%")
+6 UPDATE `bank` SET `schet`= (((SELECT  `schet` FROM `bank` WHERE `bank`=  
+(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%"))-
+ (SELECT  `summa` FROM `plas` WHERE `plastik num 1`= LIKE '11111111%'))) WHERE  
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%");
+7 UPDATE `bank raqam` SET `bank`='[value-1]' WHERE `bank`=(A)
+8 UPDATE `bank raqam` SET `bank`='[value-1]' WHERE 
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE '12345678%')
+9 SELECT  `schet` FROM `bank` WHERE `bank`= (SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "12345678%")
+10 (SELECT  `summa`  FROM `plas` WHERE `plastik num 2` =LIKE '12345678%')
+11 (SELECT  `schet` FROM `bank` WHERE `bank`= (SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "12345678%")) + (SELECT  `summa`  FROM `plas` WHERE `plastik num 2` =LIKE '12345678%' AND `plastik num 1` = '11111111%')
+12 UPDATE `bank raqam` SET `bank`=((SELECT  `schet` FROM `bank` WHERE `bank`= (SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "12345678%")) + (SELECT  `summa`  FROM `plas` WHERE `plastik num 2` =LIKE '12345678%' AND `plastik num 1` = '11111111%')) WHERE 
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE '12345678%')
+13 UPDATE `bank` SET `schet`= (((SELECT  `schet` FROM `bank` WHERE `bank`=  
+(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%"))-
+ (SELECT  `summa`  FROM `plas` WHERE `plastik num 2` 
+  = '1234567886676767%' AND `plastik num 1` = '1111111154384633%')) WHERE  
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%");                       
+UPDATE `bank raqam` SET `bank`=((SELECT  `schet` FROM `bank` WHERE `bank`= 
+ (SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "12345678%")) +
+ (SELECT  `summa`  FROM `plas` WHERE `plastik num 2` 
+  =LIKE '1234567886676767%' AND `plastik num 1` = '1111111154384633%')) WHERE 
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE '12345678%')
+
+14 UPDATE `bank` SET `schet`= (((SELECT  `schet` FROM `bank` WHERE `bank`=  
+(SELECT `bank` FROM `bank raqam` WHERE `raqam`= LIKE "11111111%"))-
+(SELECT  `summa`  FROM `plas` WHERE `plastik num 2` 
+= '1234567886676767%' AND `plastik num 1` = '1111111154384633%')) WHERE  
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "11111111%");                   
+UPDATE `bank raqam` SET `bank`=((SELECT  `schet` FROM `bank` WHERE `bank`= 
+(SELECT `bank` FROM `bank raqam` WHERE `raqam` LIKE "12345678%")) +
+(SELECT  `summa`  FROM `plas` WHERE `plastik num 2` 
+=LIKE '1234567886676767%' AND `plastik num 1` = '1111111154384633%')) WHERE 
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` = LIKE '12345678%')
+15 UPDATE `bank` SET `schet`= ((SELECT  `schet` FROM `bank` WHERE `bank`=  
+(SELECT `bank` FROM `bank raqam` WHERE `raqam` = '11111111'))-
+(SELECT  `summa`  FROM `plas` WHERE 
+ `plastik num 2` = '1234567886676767' AND `plastik num 1` = '1111111154384633')) WHERE  
+`bank` = (SELECT `bank` FROM `bank raqam` WHERE `raqam` = '11111111');
+                            
+ UPDATE `bank raqam` SET `bank`=((SELECT  `schet` FROM `bank` WHERE `bank`= 
+(SELECT `bank` FROM `bank raqam` WHERE `raqam`=  '12345678')) +
+(SELECT  `summa`  FROM `plas` WHERE `plastik num 2` 
+= '1234567886676767' AND `plastik num 1` = '1111111154384633')) WHERE 
+`bank`=(SELECT `bank` FROM `bank raqam` WHERE `raqam` =  '12345678')
